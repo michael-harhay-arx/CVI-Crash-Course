@@ -1,0 +1,40 @@
+\doxysection{Test\+Stand Flows }
+\hypertarget{flow}{}\label{flow}\index{TestStand Flows@{TestStand Flows}}
+\hypertarget{flow_seqflow}{}\doxysubsection{\texorpdfstring{Sequence Flow}{Sequence Flow}}\label{flow_seqflow}
+Test\+Stand follows a standard order of sequences within a sequence file, outlined by the following flowchart. If the following sequences do not appear in Test\+Stand, navigate to {\bfseries{Edit \texorpdfstring{$>$}{>} Sequence File Callbacks}}. From that menu, you can add default Test\+Stand callback sequences.
+\begin{DoxyEnumerate}
+\item {\bfseries{Process\+Setup}}:\+ Used for program setup (e.\+g. starting threads, initializing libraries).
+\item {\bfseries{Pre\+Batch}}:\+ If batch model is active, runs before each batch.
+\item {\bfseries{Pre\+UUT}}:\+ Runs before each UUT.
+\item {\bfseries{Main\+Sequence}}:\+ Primary test sequence to be run.
+\item {\bfseries{Post\+UUT}}:\+ Runs after each UUT.
+\item {\bfseries{Post\+Batch}}:\+ If batch model is active, runs after each batch.
+\item {\bfseries{Process\+Cleanup}}:\+ Used for program cleanup.
+\end{DoxyEnumerate}
+
+ 
+\begin{DoxyImage}%
+\includegraphics[width=0.400000\textwidth]{SequencerFlow.png}%
+\doxyfigcaption{Test\+Stand Sequence Flow}%
+\end{DoxyImage}
+\hypertarget{flow_stepflow}{}\doxysubsection{\texorpdfstring{Test Step Flow}{Test Step Flow}}\label{flow_stepflow}
+Test\+Stand also follows a standard procedure within each test step, as outlined below.
+\begin{DoxyEnumerate}
+\item {\bfseries{Preconditions}}:\+ See \doxysectlink{steps_stepprops}{Step Properties}{3}.
+\item {\bfseries{Loop Initialization Expression}}:\+ Used to initialize loop variables (e.\+g. int i = 0).
+\item {\bfseries{Pre-\/\+Expression}}:\+ See \doxysectlink{steps_stepprops}{Step Properties}{3}.
+\item {\bfseries{Module Action}}:\+ Main module action.
+\item {\bfseries{Post-\/\+Expression}}:\+ See \doxysectlink{steps_stepprops}{Step Properties}{3}.
+\item {\bfseries{Status Expression}}:\+ Determines pass/\+fail status of step.
+\item {\bfseries{Loop Increment Expression}}:\+ Increments loop variables (e.\+g. i++).
+\item {\bfseries{Loop While Expression}}:\+ Checks loop condition (e.\+g. i \texorpdfstring{$<$}{<} 10).
+\item {\bfseries{Loop Status Expression}}:\+ Determines pass/\+fail status of loop.
+\item {\bfseries{Post Actions}}:\+ See \doxysectlink{steps_stepprops}{Step Properties}{3}.
+\end{DoxyEnumerate}
+
+ 
+\begin{DoxyImage}%
+\includegraphics[width=0.300000\textwidth]{StepFlow.png}%
+\doxyfigcaption{Test\+Stand Test Step Flow}%
+\end{DoxyImage}
+ 

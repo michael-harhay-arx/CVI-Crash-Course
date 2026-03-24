@@ -1,0 +1,7 @@
+CVI Crash Course
+- Compiler options: manage configurations, build commands, target type (static vs dynamic)
+- Tip and tricks (hotkeys, e.g. commenting/ctrlI/G/L/M/K/shift+space, debugging F5/8/10, generate prototypes, cycle through new changes)
+- Setup: line numbers, options-> environment
+- Attach/detach from process
+- Resource tracking/variable + call stack/memory panes under Window
+- Debugging (standard step commands, set code line as next step)

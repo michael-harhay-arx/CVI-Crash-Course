@@ -1,0 +1,49 @@
+\doxysection{Variables }
+\hypertarget{vars}{}\label{vars}\index{Variables@{Variables}}
+Variables in Test\+Stand work similarly to variables in most programming languages. The following section will detail how they work.\hypertarget{vars_vartypes}{}\doxysubsection{\texorpdfstring{Variable Types}{Variable Types}}\label{vars_vartypes}
+
+\begin{DoxyItemize}
+\item {\bfseries{Number}}:\+ encompasses all numeric types.
+\item {\bfseries{String}}:\+ note that there is no "{}char"{} variable type, only string.
+\item {\bfseries{Boolean}}
+\item {\bfseries{Object Reference}}:\+ references an object (similar to a pointer).
+\item {\bfseries{Container}}:\+ a structure that can hold members of various data types (similar to a C struct).
+\item {\bfseries{Type}}:\+ a user-\/defined datatype.
+\item {\bfseries{Array}}
+\end{DoxyItemize}\hypertarget{vars_varscope}{}\doxysubsection{\texorpdfstring{Variable Scopes}{Variable Scopes}}\label{vars_varscope}
+From smallest to largest:\+
+\begin{DoxyItemize}
+\item {\bfseries{Step}}:\+ Only exists within the current test step.
+\item {\bfseries{Local}}:\+ Only exists within the current sequence.
+\item {\bfseries{Parameters}}:\+ Must be passed into the current sequence by the caller sequence.
+\item {\bfseries{File\+Globals}}:\+ Global variables that exist everywhere within a sequence file.
+\item {\bfseries{Station\+Globals}}:\+ Variables shared across the "{}station"{} (all sequence files have access).
+\item {\bfseries{This\+Context}}:\+ The current sequence "{}context"{}.
+\item {\bfseries{Run\+State}}:\+ A broad grouping encompassing the Test\+Stand engine and Context, as well as other items.
+\end{DoxyItemize}
+
+Note:\+ {\bfseries{This\+Context}} and {\bfseries{Run\+State}} are typically only used when working with the API. However, feel free to familiarize yourself with them.
+
+ 
+\begin{DoxyImage}%
+\includegraphics[width=0.250000\textwidth]{Scopes.png}%
+\doxyfigcaption{Test\+Stand Variable Scopes}%
+\end{DoxyImage}
+\hypertarget{vars_workwithvars}{}\doxysubsection{\texorpdfstring{Working with Variables}{Working with Variables}}\label{vars_workwithvars}
+\hypertarget{vars_Creating}{}\doxysubsubsection{\texorpdfstring{Variables}{Variables}}\label{vars_Creating}
+To create a variable, right click under the desired scope in the Variables Pane. Then select the desired type from the resulting dropdown.  
+\begin{DoxyImageNoCaption}%
+  \doxymbox{\includegraphics[width=0.300000\textwidth]{InsertVar.png}}%
+\end{DoxyImageNoCaption}
+
+
+There is another useful way to create variables:\+ type the desired variable name into any expression box, right click the variable name, and select {\bfseries{Create "{}variable name"{} \texorpdfstring{$>$}{>} Desired variable type}}.  
+\begin{DoxyImageNoCaption}%
+  \doxymbox{\includegraphics[width=0.350000\textwidth]{CreateVar.png}}%
+\end{DoxyImageNoCaption}
+\hypertarget{vars_Passing}{}\doxysubsubsection{\texorpdfstring{Variables into Code Modules}{Variables into Code Modules}}\label{vars_Passing}
+It is very important that all variables being passed between Test\+Stand and external C code have the appropriate type. To check how variables are being passed into a step, select the step in the Steps Pane, which will open the Step Settings Pane. Then, select a parameter to view its properties on the right side of the pane.  
+\begin{DoxyImageNoCaption}%
+  \doxymbox{\includegraphics[width=0.900000\textwidth]{VarPassType.png}}%
+\end{DoxyImageNoCaption}
+ In this case, it would be important to ensure that DIO\+\_\+\+Get\+Device\+Index() from DIO\+\_\+\+LIB.\+dll is supposed to take a pointer to a {\bfseries{signed 32-\/bit integer}} for the parameter Device\+Index. 

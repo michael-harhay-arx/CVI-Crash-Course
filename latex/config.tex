@@ -1,0 +1,49 @@
+\chapter{Configuration \& Options }
+\hypertarget{config}{}\label{config}\index{Configuration \& Options@{Configuration \& Options}}
+CVI contains a number of menus containing configuration settings and options. This section of the guide will briefly list the most important settings and their recommended states.\hypertarget{config_seqfileprop}{}\doxysection{\texorpdfstring{Sequence File Properties}{Sequence File Properties}}\label{config_seqfileprop}
+Can be accessed via {\bfseries{Edit \texorpdfstring{$>$}{>} Sequence File Properties}}.\hypertarget{config_Shared}{}\doxysubsection{\texorpdfstring{File Globals}{File Globals}}\label{config_Shared}
+WIP\hypertarget{config_File}{}\doxysubsection{\texorpdfstring{Format}{Format}}\label{config_File}
+The dropdown allows the user to choose between saving the file in INI, XML, or binary format. For now, it doesn\textquotesingle{}t matter.  
+\begin{DoxyImage}%
+\includegraphics[width=0.300000\textwidth]{SeqFileProperties.png}%
+\doxyfigcaption{Sequence File Properties Menu}%
+\end{DoxyImage}
+\hypertarget{config_usermng}{}\doxysection{\texorpdfstring{User Manager}{User Manager}}\label{config_usermng}
+Can be accessed via {\bfseries{View \texorpdfstring{$>$}{>} User Manager}} or {\bfseries{Ctrl+U}}. The user manager is used to add and remove users and user groups, as well as edit information such as passwords and privileges. If you wish, add a new user profile for yourself, making sure to grant yourself admin privileges.  
+\begin{DoxyImage}%
+\includegraphics[width=0.500000\textwidth]{UserManager.png}%
+\doxyfigcaption{User Manager}%
+\end{DoxyImage}
+\hypertarget{config_stationopts}{}\doxysection{\texorpdfstring{Station Options}{Station Options}}\label{config_stationopts}
+Can be accessed via {\bfseries{Configure \texorpdfstring{$>$}{>} Station Options}}.\hypertarget{config_exe}{}\doxysubsection{\texorpdfstring{Execution}{Execution}}\label{config_exe}
+This panel contains important settings related to test sequence execution. Enable Breakpoints should be enabled, as well as Allow Break While in Code Modules. This ensures that test sequences can be properly debugged, especially when stepping into code modules. Additionally, Enable Tracing should be turned on.  
+\begin{DoxyImage}%
+\includegraphics[width=0.300000\textwidth]{Execution.png}%
+\doxyfigcaption{Station Options Execution Panel}%
+\end{DoxyImage}
+\hypertarget{config_model}{}\doxysubsection{\texorpdfstring{Model}{Model}}\label{config_model}
+This panel contains settings related to the station model. Test\+Stand supports three station models:\+
+\begin{DoxyEnumerate}
+\item {\bfseries{Parallel}}:\+ Runs the test sequence on multiple UUTs independently and concurrently, testing a new UUT whenever a test socket becomes available.
+\item {\bfseries{Batch}}:\+ Runs the test sequence on multiple UUTs similar to parallel, but synchronizes execution such that tests start at the same point and wait until they reach specific synchronization points
+\item {\bfseries{Sequential}}:\+ Runs the sequence on one UUT at a time.
+\end{DoxyEnumerate}
+
+At Arxtron, we typically use the Parallel station model, but it\textquotesingle{}s good to be familiar with all three models.  
+\begin{DoxyImage}%
+\includegraphics[width=0.320000\textwidth]{Model.png}%
+\doxyfigcaption{Station Options Model Panel}%
+\end{DoxyImage}
+\hypertarget{config_searchdirs}{}\doxysection{\texorpdfstring{Search Directories}{Search Directories}}\label{config_searchdirs}
+Can be accessed via {\bfseries{Configure \texorpdfstring{$>$}{>} Search Directories}}. Used to configure Test\+Stand\textquotesingle{}s search directories. Ensure that \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}C:\+\textbackslash{}\+Arxtron\textbackslash{}\+Libraries\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} is added, with the "{}\+Subdirs"{} option selected; this allows Test\+Stand to find and reference Arxtron library .dlls.  
+\begin{DoxyImage}%
+\includegraphics[width=0.500000\textwidth]{SearchDirs.png}%
+\doxyfigcaption{Search Directories Menu}%
+\end{DoxyImage}
+\hypertarget{config_modelopts}{}\doxysection{\texorpdfstring{Model Options}{Model Options}}\label{config_modelopts}
+Can be accessed via {\bfseries{Configure \texorpdfstring{$>$}{>} Model Options}}. Primarily used to select the number of "{}\+Test Sockets"{}, or the max number of UUTs that can be tested simultaneously.  
+\begin{DoxyImage}%
+\includegraphics[width=0.300000\textwidth]{ModelOptions.png}%
+\doxyfigcaption{Model Options Menu}%
+\end{DoxyImage}
+ 
