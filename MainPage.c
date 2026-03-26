@@ -56,127 +56,134 @@ The interface is divided into the following panes:
 * This section of the guide will briefly list the most important settings and
 * their recommended states.
 *
-* \section seqfileprop Sequence File Properties
-* Can be accessed via **Edit > Sequence File Properties**.
+* \section buildsettings Build Settings
 *
-* \subsection Shared File Globals
-* WIP
+* \subsection buildconfig Build Configurations
+* Can be accessed via **Build > Configuration**. The resulting dropdown lists 
+* the available build configurations; more can be added by selecting
+* **Manage Configurations**. The main configurations are:
+* - **Debug**: This configuration allows for debugging.
+* - **Release**: This configuration does not allow debugging, and is the most optimized for release.
+* - **Debug64**: 64-bit version of **Debug**.
+* - **Release64**: 64-bit version of **Release**.
+* \image html BuildConfig.png "Build Configuration Menu" width=30%
+* \image latex BuildConfig.png "Build Configuration Menu" width=30%
 *
-* \subsection File Format
-* The dropdown allows the user to choose between
-* saving the file in INI, XML, or binary format. For now, it doesn't matter.
-* \image html SeqFileProperties.png "Sequence File Properties Menu" width=30%
-* \image latex SeqFileProperties.png "Sequence File Properties Menu" width=30%
+* \subsection buildtargettype Build Target Type
+* Can be accessed via **Build > Target Type**. The resulting dropdown lists 
+* the available build target types:
+* - **Executable**: a standalone application that can be executed.
+* - **Dynamic Link Library (DLL)**: a library file that is linked at run time. DLLs
+* are less portable and are not self-contained, but offer easier maintenance (simply replace 
+* the desired DLL without needing to recompile everything) and take up less space.
+* - **Static Library**: a library file that is linked at compile time. Static libraries 
+* have the advantage of being self-contained, however they are much larger. Additionally,
+* updating a static library requires recompiling.
+* \image html TargetType.png "Build Target Type Menu" width=30%
+* \image latex TargetType.png "Build Target Type Menu" width=30%
 *
-* \section usermng User Manager
-* Can be accessed via **View > User Manager** or **Ctrl+U**. The user manager is used
-* to add and remove users and user groups, as well as edit information such as 
-* passwords and privileges. If you wish, add a new user profile for yourself, making sure
-* to grant yourself admin privileges.
-* \image html UserManager.png "User Manager" width=50%
-* \image latex UserManager.png "User Manager" width=50%
-*
-* \section stationopts Station Options
-* Can be accessed via **Configure > Station Options**.
-*
-* \subsection exe Execution
-* This panel contains important settings related to test sequence execution. Enable
-* Breakpoints should be enabled, as well as Allow Break While in Code Modules. This ensures
-* that test sequences can be properly debugged, especially when stepping into code
-* modules. Additionally, Enable Tracing should be turned on.
-* \image html Execution.png "Station Options Execution Panel" width=30%
-* \image latex Execution.png "Station Options Execution Panel" width=30%
-*
-* \subsection model Model
-* This panel contains settings related to the station model. TestStand supports three 
-* station models: 
-* -# **Parallel**: Runs the test sequence on multiple UUTs independently and concurrently, testing a new UUT
-* whenever a test socket becomes available.
-* -# **Batch**: Runs the test sequence on multiple UUTs similar to parallel, but synchronizes
-* execution such that tests start at the same point and wait until they reach specific
-* synchronization points
-* -# **Sequential**: Runs the sequence on one UUT at a time.
-*
-* At Arxtron, we typically use the Parallel station model, but it's good to be familiar with all three models.
-* \image html Model.png "Station Options Model Panel" width=32%
-* \image latex Model.png "Station Options Model Panel" width=32%
-*
-* \section searchdirs Search Directories
-* Can be accessed via **Configure > Search Directories**. Used to configure TestStand's
-* search directories. Ensure that **C:\Arxtron\Libraries** is added, with the "Subdirs" option
-* selected; this allows TestStand to find and reference Arxtron library .dlls.
-* \image html SearchDirs.png "Search Directories Menu" width=50%
-* \image latex SearchDirs.png "Search Directories Menu" width=50%
-*
-* \section modelopts Model Options
-* Can be accessed via **Configure > Model Options**. Primarily used to select the number
-* of "Test Sockets", or the max number of UUTs that can be tested simultaneously.
-* \image html ModelOptions.png "Model Options Menu" width=30%
-* \image latex ModelOptions.png "Model Options Menu" width=30%
+* \subsection buildtarget Build Target Settings
+* Can be accessed via **Build > Target Settings**. Target settings are used to
+* configure the various target types. These settings typically aren't touched,
+* but are good to know about.
+* \image html Target.png "Build Target Settings Menu" width=40%
+* \image latex Target.png "Build Target Settings Menu" width=40%
 * 
+* \section environment Environment
+* 
+* \subsection include IncludePaths
+* Can be accessed via **Options > Environment > Include Paths**. This menu determines
+* CVI's search directories. Ensure that "C:\Arxtron\Libraries" is included.
+* \image html Environment.png "Include Paths Menu" width=42%
+* \image latex Environment.png "Include Paths Menu" width=42%
+*
+* \section editor Editor Preferences
+* 
+* Can be accessed via **Options > Editor Preferences**. Typically, these settings
+* should not be changed, but are good to know about.
+* \image html EditorPrefs.png "Editor Preferences Menu" width=25%
+* \image latex EditorPrefs.png "Editor Preferences Menu" width=25%
+*
 *******************************************************************************/
 
 /***************************************************************************//*!
-* \page developing Developing a Test Sequence
-* * \subpage vars
-* * \subpage steps
-* * \subpage types
-* * \subpage flow
-*******************************************************************************/
-
-/***************************************************************************//*!
-* \page running Running a Test Sequence
+* \page running Running a CVI Project
 *
-* \section execute Program Execution
+* \section runningsection Running a CVI Project
+* \subsection building Building a Project
+* To compile a CVI project, follow these steps:
+* -# Ensure that the correct target type is selected.
+* -# If just the current file needs to be compiled, press **Ctrl+K** to do so.
+* Otherwise, press **Ctrl+M** to build the entire project.
+* -# Warnings, errors, and other build-related messages will appear in the
+* **Build Output Pane**
+* \image html BuildOutput.png "Build Output Pane" width=80%
+* \image latex BuildOutput.png "Build Output Pane" width=80%
 *
-* \subsection modes Step Run Modes
-* Right-clicking on a test step and navigating to **Run Mode** reveals the available step run modes.
-* These step modes often prove useful while debugging.
-* - **Force to Pass**: the test step always passes regardless of the actual test result.
-* - **Force to Fail**: the test step always fails regardless of the actual test result.
-* - **Skip**: the test step is skipped during sequence execution (used to "comment out" steps).
-* - **Normal**: the test step runs normally.
+* \subsection procattach Attach to Process 
+* When calling C code from a TestStand sequence or some other executable,
+* you can open the corresponding source project in CVI and select **Run > Attach to Process**
+* to attach to the process. This allows the current process to be debugged using
+* all of CVI's debug features.
 *
-* \subsection running Running the Sequence
-* There are a few ways to run a TestStand sequence. To see these options,
-* hover over **Execute**.
-* - **Test UUTs**: Runs the sequence utilizing the station model.
-* - **Single Pass**: The same as **Test UUTs**, but only tests one UUT.
-* - **Run MainSequence**: Runs the MainSequence directly without using the station model (useful for debugging).
-*
-* \subsection running2 Running Selected Steps
-* To run a subset of steps from a sequence, select the desired steps within the Steps Pane
-* and right click, selecting **Run Selected Steps**. This can also be done from **Execute > Run Selected Steps**.
+* Similarly, **Run > Detach from Process** can be used to detach an attached CVI
+* instance. This is often useful when stepping into CVI code from TestStand, as
+* terminating the process from CVI without detaching will halt the entire 
+* TestStand sequence.
 *
 * \section debug Debugging
-* Debugging a TestStand sequence can be approached similar to conventional code debugging.
-*
-* \subsection analyze Sequence Analyzer
-* TestStand's sequence analyzer is a tool that will attempt to point out potential
-* issues in a sequence. It can be run via **Debug > Sequence Analyzer > Analyze "SequenceFileName.seq"**.
-* Additionally, it can be automatically set to run before any execution, via **Debug > Sequence Analyzer > Toggle Analyze File Before Executing**.
-*
-* Sequence analysis results will populate in the Analysis Results Pane, which is in the same
-* location as the Step Settings Pane.
 *
 * \subsection breakpoints Breakpoints & Watch Expressions
-* Breakpoints can be set by navigating to **Debug > Breakpoints/Watches**, and adding
-* a breakpoint via the resulting menu. Note that watch expressions can also be set from 
-* within the menu.
+* Breakpoints can be set by navigating to **Run > Breakpoints** (**Shift+F7**),
+* and adding a breakpoint via the resulting menu. 
 *
-* Alternatively, clicking within the white space directly to the left of a test step
-* will enable a breakpoint.
-* \image html Breakpoint.png width=30%
-* \image latex Breakpoint.png width=30%
+* Alternatively, clicking within the grey space directly to the left of a line
+* number will enable a breakpoint.
+* \image html Breakpoint.png width=20%
+* \image latex Breakpoint.png width=20%
+*
+* Watch expressions can be set by selecting a line of code, then selecting
+* **Run > Add Watch Expression** or by pressing **Shift+F9**.
 *
 * \subsection stepcommands Step Commands
 * While executing a sequence with breakpoints, standard debugging step commands
-* can be used. They can be found under **Debug**; here are some of the most useful ones:
+* can be used. They can be found under **Run**; here are some of the most useful ones:
 * - **Resume**: Resumes execution until the next breakpoint is reached (F5).
-* - **Step Over**: Steps over the current test step without resuming execution (F8).
-* - **Step Into**: Steps into the current test step (F10). Especially useful for
-* stepping into the source code of a code module.
+* - **Set Next Statement**: Sets program to run from selected line (Ctrl+Shift+F7 / right click menu).
+* - **Step Over**: Steps over the current line without resuming execution (F8).
+* - **Step Into**: Steps into the current line of code (F10).
 *
+* \subsection debugwindows Debug Windows
+* CVI features a number of windows that are useful for debugging (found under **Window**). Here are a few useful ones to explore:
+* - **Memory**: displays the memory of the current program.
+* - **Resource Tracking**: displays both allocated and deallocated from the current program.
+* - **Variables and Call Stack**: displays all program variables and their values, as well as a standard call stack.
+* - **Watch**: displays all user-defined watch expressions.
+* - **Threads**: displays threads in the current program.
+*
+*******************************************************************************/
+
+/***************************************************************************//*!
+* \page gui GUI Development
+*
+* \section guistart Getting Started
+* CVI is useful because of its built-in GUI editor. The easiest way to begin
+* developing a GUI is to copy the Arxtron template.
+*
+* TODO: Talk about how to use Arxtron GUI
+*
+* \section guidev Working with the GUI Editor
+* 
+* -# **GUI Editor Pane**: The region in which GUI editing takes place.
+* -# **Objects Pane**: This pane contains a list of present GUI objects.
+* -# **Object Properties Pane**: When a GUI object is selected, its properties
+* appear in this pane.
+* -# **Help Pane**: This pane displays helpful messages about the current selection.
+*
+* \image html GUIDefault.png "Default CVI GUI Editor Layout" width=70%
+* \image latex GUIDefault.png "Default CVI GUI Editor Layout" width=70%
+*
+* To create a GUI element, right click anywhere and make a selection.
 *******************************************************************************/
 
 /***************************************************************************//*!
@@ -189,7 +196,7 @@ The interface is divided into the following panes:
 * <tr><th>Version<th>Author<th>Date<th>Changes
 * <tr><td>1.0.0
 * <td>Michael Harhay
-* <td>24/3/2026
+* <td>25/3/2026
 * <td>Initial Release
 * </table>
 *******************************************************************************/

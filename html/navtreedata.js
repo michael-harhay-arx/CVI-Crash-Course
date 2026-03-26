@@ -28,30 +28,30 @@ var NAVTREE =
     [ "Start Here", "index.html", "index" ],
     [ "Terminology", "terms.html", null ],
     [ "Configuration &amp; Options", "config.html", [
-      [ "Sequence File Properties", "config.html#seqfileprop", [
-        [ "File Globals", "config.html#Shared", null ],
-        [ "Format", "config.html#File", null ]
+      [ "Build Settings", "config.html#buildsettings", [
+        [ "Build Configurations", "config.html#buildconfig", null ],
+        [ "Build Target Type", "config.html#buildtargettype", null ],
+        [ "Build Target Settings", "config.html#buildtarget", null ]
       ] ],
-      [ "User Manager", "config.html#usermng", null ],
-      [ "Station Options", "config.html#stationopts", [
-        [ "Execution", "config.html#exe", null ],
-        [ "Model", "config.html#model", null ]
+      [ "Environment", "config.html#environment", [
+        [ "IncludePaths", "config.html#include", null ]
       ] ],
-      [ "Search Directories", "config.html#searchdirs", null ],
-      [ "Model Options", "config.html#modelopts", null ]
+      [ "Editor Preferences", "config.html#editor", null ]
     ] ],
-    [ "Developing a Test Sequence", "developing.html", "developing" ],
-    [ "Running a Test Sequence", "running.html", [
-      [ "Program Execution", "running.html#execute", [
-        [ "Step Run Modes", "running.html#modes", null ],
-        [ "Running the Sequence", "running.html#running", null ],
-        [ "Running Selected Steps", "running.html#running2", null ]
+    [ "Running a CVI Project", "running.html", [
+      [ "Running a CVI Project", "running.html#runningsection", [
+        [ "Building a Project", "running.html#building", null ],
+        [ "Attach to Process", "running.html#procattach", null ]
       ] ],
       [ "Debugging", "running.html#debug", [
-        [ "Sequence Analyzer", "running.html#analyze", null ],
         [ "Breakpoints &amp; Watch Expressions", "running.html#breakpoints", null ],
-        [ "Step Commands", "running.html#stepcommands", null ]
+        [ "Step Commands", "running.html#stepcommands", null ],
+        [ "Debug Windows", "running.html#debugwindows", null ]
       ] ]
+    ] ],
+    [ "GUI Development", "gui.html", [
+      [ "Getting Started", "gui.html#guistart", null ],
+      [ "Working with the GUI Editor", "gui.html#guidev", null ]
     ] ],
     [ "Tips &amp; Tricks", "tips.html", [
       [ "General Tips &amp; Tricks", "tips.html#gentips", null ],

@@ -1,35 +1,43 @@
-\chapter{Running a Test Sequence }
-\hypertarget{running}{}\label{running}\index{Running a Test Sequence@{Running a Test Sequence}}
-\hypertarget{running_execute}{}\doxysection{\texorpdfstring{Program Execution}{Program Execution}}\label{running_execute}
-\hypertarget{running_modes}{}\doxysubsection{\texorpdfstring{Step Run Modes}{Step Run Modes}}\label{running_modes}
-Right-\/clicking on a test step and navigating to {\bfseries{Run Mode}} reveals the available step run modes. These step modes often prove useful while debugging.
-\begin{DoxyItemize}
-\item {\bfseries{Force to Pass}}:\+ the test step always passes regardless of the actual test result.
-\item {\bfseries{Force to Fail}}:\+ the test step always fails regardless of the actual test result.
-\item {\bfseries{Skip}}:\+ the test step is skipped during sequence execution (used to "{}comment out"{} steps).
-\item {\bfseries{Normal}}:\+ the test step runs normally.
-\end{DoxyItemize}\hypertarget{running_running}{}\doxysubsection{\texorpdfstring{Running the Sequence}{Running the Sequence}}\label{running_running}
-There are a few ways to run a Test\+Stand sequence. To see these options, hover over {\bfseries{Execute}}.
-\begin{DoxyItemize}
-\item {\bfseries{Test UUTs}}:\+ Runs the sequence utilizing the station model.
-\item {\bfseries{Single Pass}}:\+ The same as {\bfseries{Test UUTs}}, but only tests one UUT.
-\item {\bfseries{Run Main\+Sequence}}:\+ Runs the Main\+Sequence directly without using the station model (useful for debugging).
-\end{DoxyItemize}\hypertarget{running_running2}{}\doxysubsection{\texorpdfstring{Running Selected Steps}{Running Selected Steps}}\label{running_running2}
-To run a subset of steps from a sequence, select the desired steps within the Steps Pane and right click, selecting {\bfseries{Run Selected Steps}}. This can also be done from {\bfseries{Execute \texorpdfstring{$>$}{>} Run Selected Steps}}.\hypertarget{running_debug}{}\doxysection{\texorpdfstring{Debugging}{Debugging}}\label{running_debug}
-Debugging a Test\+Stand sequence can be approached similar to conventional code debugging.\hypertarget{running_analyze}{}\doxysubsection{\texorpdfstring{Sequence Analyzer}{Sequence Analyzer}}\label{running_analyze}
-Test\+Stand\textquotesingle{}s sequence analyzer is a tool that will attempt to point out potential issues in a sequence. It can be run via {\bfseries{Debug \texorpdfstring{$>$}{>} Sequence Analyzer \texorpdfstring{$>$}{>} Analyze "{}\+Sequence\+File\+Name.\+seq"{}}}. Additionally, it can be automatically set to run before any execution, via {\bfseries{Debug \texorpdfstring{$>$}{>} Sequence Analyzer \texorpdfstring{$>$}{>} Toggle Analyze File Before Executing}}.
+\chapter{Running a CVI Project }
+\hypertarget{running}{}\label{running}\index{Running a CVI Project@{Running a CVI Project}}
+\hypertarget{running_runningsection}{}\doxysection{\texorpdfstring{Running a CVI Project}{Running a CVI Project}}\label{running_runningsection}
+\hypertarget{running_building}{}\doxysubsection{\texorpdfstring{Building a Project}{Building a Project}}\label{running_building}
+To compile a CVI project, follow these steps:\+
+\begin{DoxyEnumerate}
+\item Ensure that the correct target type is selected.
+\item If just the current file needs to be compiled, press {\bfseries{Ctrl+K}} to do so. Otherwise, press {\bfseries{Ctrl+M}} to build the entire project.
+\item Warnings, errors, and other build-\/related messages will appear in the {\bfseries{Build Output Pane}}  
+\begin{DoxyImage}%
+\includegraphics[width=0.800000\textwidth]{BuildOutput.png}%
+\doxyfigcaption{Build Output Pane}%
+\end{DoxyImage}
 
-Sequence analysis results will populate in the Analysis Results Pane, which is in the same location as the Step Settings Pane.\hypertarget{running_breakpoints}{}\doxysubsection{\texorpdfstring{Breakpoints \& Watch Expressions}{Breakpoints \& Watch Expressions}}\label{running_breakpoints}
-Breakpoints can be set by navigating to {\bfseries{Debug \texorpdfstring{$>$}{>} Breakpoints/\+\+Watches}}, and adding a breakpoint via the resulting menu. Note that watch expressions can also be set from within the menu.
+\end{DoxyEnumerate}\hypertarget{running_procattach}{}\doxysubsection{\texorpdfstring{Attach to Process}{Attach to Process}}\label{running_procattach}
+When calling C code from a Test\+Stand sequence or some other executable, you can open the corresponding source project in CVI and select {\bfseries{Run \texorpdfstring{$>$}{>} Attach to Process}} to attach to the process. This allows the current process to be debugged using all of CVI\textquotesingle{}s debug features.
 
-Alternatively, clicking within the white space directly to the left of a test step will enable a breakpoint.  
+Similarly, {\bfseries{Run \texorpdfstring{$>$}{>} Detach from Process}} can be used to detach an attached CVI instance. This is often useful when stepping into CVI code from Test\+Stand, as terminating the process from CVI without detaching will halt the entire Test\+Stand sequence.\hypertarget{running_debug}{}\doxysection{\texorpdfstring{Debugging}{Debugging}}\label{running_debug}
+\hypertarget{running_breakpoints}{}\doxysubsection{\texorpdfstring{Breakpoints \& Watch Expressions}{Breakpoints \& Watch Expressions}}\label{running_breakpoints}
+Breakpoints can be set by navigating to {\bfseries{Run \texorpdfstring{$>$}{>} Breakpoints}} ({\bfseries{Shift+\+F7}}), and adding a breakpoint via the resulting menu.
+
+Alternatively, clicking within the grey space directly to the left of a line number will enable a breakpoint.  
 \begin{DoxyImageNoCaption}%
-  \doxymbox{\includegraphics[width=0.300000\textwidth]{Breakpoint.png}}%
+  \doxymbox{\includegraphics[width=0.200000\textwidth]{Breakpoint.png}}%
 \end{DoxyImageNoCaption}
-\hypertarget{running_stepcommands}{}\doxysubsection{\texorpdfstring{Step Commands}{Step Commands}}\label{running_stepcommands}
-While executing a sequence with breakpoints, standard debugging step commands can be used. They can be found under {\bfseries{Debug}}; here are some of the most useful ones:\+
+
+
+Watch expressions can be set by selecting a line of code, then selecting {\bfseries{Run \texorpdfstring{$>$}{>} Add Watch Expression}} or by pressing {\bfseries{Shift+\+F9}}.\hypertarget{running_stepcommands}{}\doxysubsection{\texorpdfstring{Step Commands}{Step Commands}}\label{running_stepcommands}
+While executing a sequence with breakpoints, standard debugging step commands can be used. They can be found under {\bfseries{Run}}; here are some of the most useful ones:\+
 \begin{DoxyItemize}
 \item {\bfseries{Resume}}:\+ Resumes execution until the next breakpoint is reached (F5).
-\item {\bfseries{Step Over}}:\+ Steps over the current test step without resuming execution (F8).
-\item {\bfseries{Step Into}}:\+ Steps into the current test step (F10). Especially useful for stepping into the source code of a code module. 
+\item {\bfseries{Set Next Statement}}:\+ Sets program to run from selected line (Ctrl+\+Shift+\+F7 /\+ right click menu).
+\item {\bfseries{Step Over}}:\+ Steps over the current line without resuming execution (F8).
+\item {\bfseries{Step Into}}:\+ Steps into the current line of code (F10).
+\end{DoxyItemize}\hypertarget{running_debugwindows}{}\doxysubsection{\texorpdfstring{Debug Windows}{Debug Windows}}\label{running_debugwindows}
+CVI features a number of windows that are useful for debugging (found under {\bfseries{Window}}). Here are a few useful ones to explore:\+
+\begin{DoxyItemize}
+\item {\bfseries{Memory}}:\+ displays the memory of the current program.
+\item {\bfseries{Resource Tracking}}:\+ displays both allocated and deallocated from the current program.
+\item {\bfseries{Variables and Call Stack}}:\+ displays all program variables and their values, as well as a standard call stack.
+\item {\bfseries{Watch}}:\+ displays all user-\/defined watch expressions.
+\item {\bfseries{Threads}}:\+ displays threads in the current program. 
 \end{DoxyItemize}

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['run_20modes_0',['Step Run Modes',['../running.html#modes',1,'']]],
-  ['running_20a_20test_20sequence_1',['Running a Test Sequence',['../running.html',1,'']]],
-  ['running_20selected_20steps_2',['Running Selected Steps',['../running.html#running2',1,'']]],
-  ['running_20the_20sequence_3',['Running the Sequence',['../running.html#running',1,'']]]
+  ['settings_0',['Settings',['../config.html#buildsettings',1,'Build Settings'],['../config.html#buildtarget',1,'Build Target Settings']]],
+  ['start_20here_1',['Start Here',['../index.html',1,'']]],
+  ['started_2',['Started',['../index.html#start',1,'Getting Started'],['../gui.html#guistart',1,'Getting Started']]],
+  ['step_20commands_3',['Step Commands',['../running.html#stepcommands',1,'']]]
 ];

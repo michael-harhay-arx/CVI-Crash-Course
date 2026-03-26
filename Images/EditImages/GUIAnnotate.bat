@@ -2,9 +2,9 @@
 setlocal enabledelayedexpansion
 
 :: Set input and output file names
-set "input_image=CVIDefault_pre.png"
+set "input_image=GUIDefault_pre.png"
 set "temp_image=temp.png"
-set "final_output=CVIDefault.png"
+set "final_output=GUIDefault.png"
 
 :: Set coordinates file
 set "coordinates_file=coordinates.txt"

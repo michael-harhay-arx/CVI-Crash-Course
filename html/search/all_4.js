@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['editing_20a_20test_20step_0',['Editing a Test Step',['../steps.html#editteststep',1,'']]],
-  ['execution_1',['Execution',['../config.html#exe',1,'Execution'],['../running.html#execute',1,'Program Execution']]],
-  ['expressions_2',['Breakpoints &amp;amp; Watch Expressions',['../running.html#breakpoints',1,'']]]
+  ['editor_0',['Working with the GUI Editor',['../gui.html#guidev',1,'']]],
+  ['editor_20preferences_1',['Editor Preferences',['../config.html#editor',1,'']]],
+  ['environment_2',['Environment',['../config.html#environment',1,'']]],
+  ['expressions_3',['Breakpoints &amp;amp; Watch Expressions',['../running.html#breakpoints',1,'']]]
 ];

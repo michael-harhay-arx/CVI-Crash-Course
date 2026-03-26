@@ -92,56 +92,51 @@ $(function(){initNavTree('config.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>CVI contains a number of menus containing configuration settings and options. This section of the guide will briefly list the most important settings and their recommended states.</p>
-<h1 class="doxsection"><a class="anchor" id="seqfileprop"></a>
-Sequence File Properties</h1>
-<p>Can be accessed via <b>Edit &gt; Sequence File Properties</b>.</p>
-<h2 class="doxsection"><a class="anchor" id="Shared"></a>
-File Globals</h2>
-<p>WIP</p>
-<h2 class="doxsection"><a class="anchor" id="File"></a>
-Format</h2>
-<p>The dropdown allows the user to choose between saving the file in INI, XML, or binary format. For now, it doesn't matter. </p><div class="image">
-<img src="SeqFileProperties.png" alt="" width="30%"/>
+<h1 class="doxsection"><a class="anchor" id="buildsettings"></a>
+Build Settings</h1>
+<h2 class="doxsection"><a class="anchor" id="buildconfig"></a>
+Build Configurations</h2>
+<p>Can be accessed via <b>Build &gt; Configuration</b>. The resulting dropdown lists the available build configurations; more can be added by selecting <b>Manage Configurations</b>. The main configurations are:</p><ul>
+<li><b>Debug</b>: This configuration allows for debugging.</li>
+<li><b>Release</b>: This configuration does not allow debugging, and is the most optimized for release.</li>
+<li><b>Debug64</b>: 64-bit version of <b>Debug</b>.</li>
+<li><b>Release64</b>: 64-bit version of <b>Release</b>. <div class="image">
+<img src="BuildConfig.png" alt="" width="30%"/>
 <div class="caption">
-Sequence File Properties Menu</div></div>
- <h1 class="doxsection"><a class="anchor" id="usermng"></a>
-User Manager</h1>
-<p>Can be accessed via <b>View &gt; User Manager</b> or <b>Ctrl+U</b>. The user manager is used to add and remove users and user groups, as well as edit information such as passwords and privileges. If you wish, add a new user profile for yourself, making sure to grant yourself admin privileges. </p><div class="image">
-<img src="UserManager.png" alt="" width="50%"/>
+Build Configuration Menu</div></div>
+ </li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="buildtargettype"></a>
+Build Target Type</h2>
+<p>Can be accessed via <b>Build &gt; Target Type</b>. The resulting dropdown lists the available build target types:</p><ul>
+<li><b>Executable</b>: a standalone application that can be executed.</li>
+<li><b>Dynamic Link Library (DLL)</b>: a library file that is linked at run time. DLLs are less portable and are not self-contained, but offer easier maintenance (simply replace the desired DLL without needing to recompile everything) and take up less space.</li>
+<li><b>Static Library</b>: a library file that is linked at compile time. Static libraries have the advantage of being self-contained, however they are much larger. Additionally, updating a static library requires recompiling. <div class="image">
+<img src="TargetType.png" alt="" width="30%"/>
 <div class="caption">
-User Manager</div></div>
- <h1 class="doxsection"><a class="anchor" id="stationopts"></a>
-Station Options</h1>
-<p>Can be accessed via <b>Configure &gt; Station Options</b>.</p>
-<h2 class="doxsection"><a class="anchor" id="exe"></a>
-Execution</h2>
-<p>This panel contains important settings related to test sequence execution. Enable Breakpoints should be enabled, as well as Allow Break While in Code Modules. This ensures that test sequences can be properly debugged, especially when stepping into code modules. Additionally, Enable Tracing should be turned on. </p><div class="image">
-<img src="Execution.png" alt="" width="30%"/>
+Build Target Type Menu</div></div>
+ </li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="buildtarget"></a>
+Build Target Settings</h2>
+<p>Can be accessed via <b>Build &gt; Target Settings</b>. Target settings are used to configure the various target types. These settings typically aren't touched, but are good to know about. </p><div class="image">
+<img src="Target.png" alt="" width="40%"/>
 <div class="caption">
-Station Options Execution Panel</div></div>
- <h2 class="doxsection"><a class="anchor" id="model"></a>
-Model</h2>
-<p>This panel contains settings related to the station model. TestStand supports three station models:</p><ol type="1">
-<li><b>Parallel</b>: Runs the test sequence on multiple UUTs independently and concurrently, testing a new UUT whenever a test socket becomes available.</li>
-<li><b>Batch</b>: Runs the test sequence on multiple UUTs similar to parallel, but synchronizes execution such that tests start at the same point and wait until they reach specific synchronization points</li>
-<li><b>Sequential</b>: Runs the sequence on one UUT at a time.</li>
-</ol>
-<p>At Arxtron, we typically use the Parallel station model, but it's good to be familiar with all three models. </p><div class="image">
-<img src="Model.png" alt="" width="32%"/>
+Build Target Settings Menu</div></div>
+ <h1 class="doxsection"><a class="anchor" id="environment"></a>
+Environment</h1>
+<h2 class="doxsection"><a class="anchor" id="include"></a>
+IncludePaths</h2>
+<p>Can be accessed via <b>Options &gt; Environment &gt; Include Paths</b>. This menu determines CVI's search directories. Ensure that "C:\Arxtron\Libraries" is included. </p><div class="image">
+<img src="Environment.png" alt="" width="42%"/>
 <div class="caption">
-Station Options Model Panel</div></div>
- <h1 class="doxsection"><a class="anchor" id="searchdirs"></a>
-Search Directories</h1>
-<p>Can be accessed via <b>Configure &gt; Search Directories</b>. Used to configure TestStand's search directories. Ensure that **C:\Arxtron\Libraries** is added, with the "Subdirs" option selected; this allows TestStand to find and reference Arxtron library .dlls. </p><div class="image">
-<img src="SearchDirs.png" alt="" width="50%"/>
+Include Paths Menu</div></div>
+ <h1 class="doxsection"><a class="anchor" id="editor"></a>
+Editor Preferences</h1>
+<p>Can be accessed via <b>Options &gt; Editor Preferences</b>. Typically, these settings should not be changed, but are good to know about. </p><div class="image">
+<img src="EditorPrefs.png" alt="" width="25%"/>
 <div class="caption">
-Search Directories Menu</div></div>
- <h1 class="doxsection"><a class="anchor" id="modelopts"></a>
-Model Options</h1>
-<p>Can be accessed via <b>Configure &gt; Model Options</b>. Primarily used to select the number of "Test Sockets", or the max number of UUTs that can be tested simultaneously. </p><div class="image">
-<img src="ModelOptions.png" alt="" width="30%"/>
-<div class="caption">
-Model Options Menu</div></div>
+Editor Preferences Menu</div></div>
   </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

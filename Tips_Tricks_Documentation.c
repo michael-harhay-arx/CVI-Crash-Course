@@ -5,7 +5,12 @@
 *
 * \section gentips General Tips & Tricks
 * - **Help Menu**: Press **F1** to access the CVI help documentation.
-* - **Generate Prototype**: 
+* - **Generate Prototype**: Select **Build > Generate Prototypes** to generate 
+* a file containing declarations for global and static functions, as well as
+* external declarations for global variables. These can be copied into your
+* existing source and header files.
+* - **Tags**: Select a line and press **Shift+F2** to "tag" or "bookmark" that line.
+* Then, press **F2** to cycle through all tagged lines.
 *
 * \section hotkeys Hotkeys
 * - **Comment Selection**: Select code to comment out, press **Ctrl+F3**

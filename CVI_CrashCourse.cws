@@ -13,10 +13,10 @@ Number of Projects = 1
 Active Project = 1
 Project 0001 = "CVI_CrashCourse.prj"
 Drag Bar Left = 337
-Window Top = 364
-Window Left = 393
-Window Bottom = 1364
-Window Right = 1351
+Window Top = 145
+Window Left = 470
+Window Bottom = 929
+Window Right = 1412
 Maximized = True
 Maximized Children = True
 Max32 Number Of Errors = 20
@@ -30,7 +30,7 @@ Save Changes Before Compiling = "Always"
 Hide Windows = False
 Break At First Statement = False
 Sort Type = "File Name"
-Number of Opened Files = 2
+Number of Opened Files = 3
 Window Confinement Region Enabled = True
 MainColumnWidth = 320
 FileDateColumnWidth = 70
@@ -46,35 +46,30 @@ Batch Build Release = False
 Batch Build Debug = False
 
 [File 0001]
-Path = "/c/Arxtron/Training Updates/CVI Training/Development_Documentation.c"
-File Type = "CSource"
-Disk Date = 3857206480
-In Projects = "1,"
-Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
-
-[File 0002]
 Path = "/c/Arxtron/Training Updates/CVI Training/MainPage.c"
 File Type = "CSource"
-Disk Date = 3857211083
+Disk Date = 3857384461
 In Projects = "1,"
-Source Window State = "1,9,9,9,39,39,39,0,0,0,0,0,0,0,0,0,11,0,9,39,401,693,1,0,"
+Source Window State = "1,161,161,161,57,57,57,0,0,0,0,0,0,0,0,0,120,0,161,57,401,693,1,0,"
 Window Top = 33
 Window Left = 10
 Window Z-Order = 1
 
-[File 0003]
+[File 0002]
 Path = "/c/Arxtron/Training Updates/CVI Training/Terminology_Documentation.c"
 File Type = "CSource"
-Disk Date = 3856781980
+Disk Date = 3857213651
 In Projects = "1,"
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400,600,0,0,"
+Source Window State = "1,15,15,15,8,8,8,0,0,0,0,0,0,0,0,0,0,0,15,8,400,600,1,0,"
+Window Top = 31
+Window Z-Order = 3
 
-[File 0004]
+[File 0003]
 Path = "/c/Arxtron/Training Updates/CVI Training/Tips_Tricks_Documentation.c"
 File Type = "CSource"
-Disk Date = 3857209396
+Disk Date = 3857215585
 In Projects = "1,"
-Source Window State = "1,21,21,21,72,72,72,0,0,0,0,0,0,0,0,0,0,0,21,72,401,693,1,0,"
+Source Window State = "1,26,26,26,80,80,80,0,0,0,0,0,0,0,0,0,0,0,26,80,401,693,1,0,"
 Window Top = 95
 Window Left = 42
 Window Z-Order = 2
@@ -82,6 +77,7 @@ Window Z-Order = 2
 [Tab Order]
 Tab 0001 = "/c/Arxtron/Training Updates/CVI Training/MainPage.c"
 Tab 0002 = "/c/Arxtron/Training Updates/CVI Training/Tips_Tricks_Documentation.c"
+Tab 0003 = "/c/Arxtron/Training Updates/CVI Training/Terminology_Documentation.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True

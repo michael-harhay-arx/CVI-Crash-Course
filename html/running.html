@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CVI Crash Course: Running a Test Sequence</title>
+<title>CVI Crash Course: Running a CVI Project</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,48 +88,51 @@ $(function(){initNavTree('running.html','',''); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Running a Test Sequence </div></div>
+  <div class="headertitle"><div class="title">Running a CVI Project </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1 class="doxsection"><a class="anchor" id="execute"></a>
-Program Execution</h1>
-<h2 class="doxsection"><a class="anchor" id="modes"></a>
-Step Run Modes</h2>
-<p>Right-clicking on a test step and navigating to <b>Run Mode</b> reveals the available step run modes. These step modes often prove useful while debugging.</p><ul>
-<li><b>Force to Pass</b>: the test step always passes regardless of the actual test result.</li>
-<li><b>Force to Fail</b>: the test step always fails regardless of the actual test result.</li>
-<li><b>Skip</b>: the test step is skipped during sequence execution (used to "comment out" steps).</li>
-<li><b>Normal</b>: the test step runs normally.</li>
-</ul>
-<h2 class="doxsection"><a class="anchor" id="running"></a>
-Running the Sequence</h2>
-<p>There are a few ways to run a TestStand sequence. To see these options, hover over <b>Execute</b>.</p><ul>
-<li><b>Test UUTs</b>: Runs the sequence utilizing the station model.</li>
-<li><b>Single Pass</b>: The same as <b>Test UUTs</b>, but only tests one UUT.</li>
-<li><b>Run MainSequence</b>: Runs the MainSequence directly without using the station model (useful for debugging).</li>
-</ul>
-<h2 class="doxsection"><a class="anchor" id="running2"></a>
-Running Selected Steps</h2>
-<p>To run a subset of steps from a sequence, select the desired steps within the Steps Pane and right click, selecting <b>Run Selected Steps</b>. This can also be done from <b>Execute &gt; Run Selected Steps</b>.</p>
+<div class="textblock"><h1 class="doxsection"><a class="anchor" id="runningsection"></a>
+Running a CVI Project</h1>
+<h2 class="doxsection"><a class="anchor" id="building"></a>
+Building a Project</h2>
+<p>To compile a CVI project, follow these steps:</p><ol type="1">
+<li>Ensure that the correct target type is selected.</li>
+<li>If just the current file needs to be compiled, press <b>Ctrl+K</b> to do so. Otherwise, press <b>Ctrl+M</b> to build the entire project.</li>
+<li>Warnings, errors, and other build-related messages will appear in the <b>Build Output Pane</b> <div class="image">
+<img src="BuildOutput.png" alt="" width="80%"/>
+<div class="caption">
+Build Output Pane</div></div>
+ </li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="procattach"></a>
+Attach to Process</h2>
+<p>When calling C code from a TestStand sequence or some other executable, you can open the corresponding source project in CVI and select <b>Run &gt; Attach to Process</b> to attach to the process. This allows the current process to be debugged using all of CVI's debug features.</p>
+<p>Similarly, <b>Run &gt; Detach from Process</b> can be used to detach an attached CVI instance. This is often useful when stepping into CVI code from TestStand, as terminating the process from CVI without detaching will halt the entire TestStand sequence.</p>
 <h1 class="doxsection"><a class="anchor" id="debug"></a>
 Debugging</h1>
-<p>Debugging a TestStand sequence can be approached similar to conventional code debugging.</p>
-<h2 class="doxsection"><a class="anchor" id="analyze"></a>
-Sequence Analyzer</h2>
-<p>TestStand's sequence analyzer is a tool that will attempt to point out potential issues in a sequence. It can be run via <b>Debug &gt; Sequence Analyzer &gt; Analyze "SequenceFileName.seq"</b>. Additionally, it can be automatically set to run before any execution, via <b>Debug &gt; Sequence Analyzer &gt; Toggle Analyze File Before Executing</b>.</p>
-<p>Sequence analysis results will populate in the Analysis Results Pane, which is in the same location as the Step Settings Pane.</p>
 <h2 class="doxsection"><a class="anchor" id="breakpoints"></a>
 Breakpoints &amp; Watch Expressions</h2>
-<p>Breakpoints can be set by navigating to <b>Debug &gt; Breakpoints/Watches</b>, and adding a breakpoint via the resulting menu. Note that watch expressions can also be set from within the menu.</p>
-<p>Alternatively, clicking within the white space directly to the left of a test step will enable a breakpoint. </p><div class="image">
-<img src="Breakpoint.png" alt="" width="30%"/>
+<p>Breakpoints can be set by navigating to <b>Run &gt; Breakpoints</b> (<b>Shift+F7</b>), and adding a breakpoint via the resulting menu.</p>
+<p>Alternatively, clicking within the grey space directly to the left of a line number will enable a breakpoint. </p><div class="image">
+<img src="Breakpoint.png" alt="" width="20%"/>
 </div>
- <h2 class="doxsection"><a class="anchor" id="stepcommands"></a>
+ <p>Watch expressions can be set by selecting a line of code, then selecting <b>Run &gt; Add Watch Expression</b> or by pressing <b>Shift+F9</b>.</p>
+<h2 class="doxsection"><a class="anchor" id="stepcommands"></a>
 Step Commands</h2>
-<p>While executing a sequence with breakpoints, standard debugging step commands can be used. They can be found under <b>Debug</b>; here are some of the most useful ones:</p><ul>
+<p>While executing a sequence with breakpoints, standard debugging step commands can be used. They can be found under <b>Run</b>; here are some of the most useful ones:</p><ul>
 <li><b>Resume</b>: Resumes execution until the next breakpoint is reached (F5).</li>
-<li><b>Step Over</b>: Steps over the current test step without resuming execution (F8).</li>
-<li><b>Step Into</b>: Steps into the current test step (F10). Especially useful for stepping into the source code of a code module. </li>
+<li><b>Set Next Statement</b>: Sets program to run from selected line (Ctrl+Shift+F7 / right click menu).</li>
+<li><b>Step Over</b>: Steps over the current line without resuming execution (F8).</li>
+<li><b>Step Into</b>: Steps into the current line of code (F10).</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="debugwindows"></a>
+Debug Windows</h2>
+<p>CVI features a number of windows that are useful for debugging (found under <b>Window</b>). Here are a few useful ones to explore:</p><ul>
+<li><b>Memory</b>: displays the memory of the current program.</li>
+<li><b>Resource Tracking</b>: displays both allocated and deallocated from the current program.</li>
+<li><b>Variables and Call Stack</b>: displays all program variables and their values, as well as a standard call stack.</li>
+<li><b>Watch</b>: displays all user-defined watch expressions.</li>
+<li><b>Threads</b>: displays threads in the current program. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
