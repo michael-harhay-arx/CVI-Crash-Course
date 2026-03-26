@@ -26,7 +26,6 @@ var NAVTREE =
 [
   [ "CVI Crash Course", "index.html", [
     [ "Start Here", "index.html", "index" ],
-    [ "Terminology", "terms.html", null ],
     [ "Configuration &amp; Options", "config.html", [
       [ "Build Settings", "config.html#buildsettings", [
         [ "Build Configurations", "config.html#buildconfig", null ],
@@ -41,17 +40,21 @@ var NAVTREE =
     [ "Running a CVI Project", "running.html", [
       [ "Running a CVI Project", "running.html#runningsection", [
         [ "Building a Project", "running.html#building", null ],
-        [ "Attach to Process", "running.html#procattach", null ]
+        [ "Run Options", "running.html#runoptions", null ]
       ] ],
       [ "Debugging", "running.html#debug", [
         [ "Breakpoints &amp; Watch Expressions", "running.html#breakpoints", null ],
         [ "Step Commands", "running.html#stepcommands", null ],
-        [ "Debug Windows", "running.html#debugwindows", null ]
+        [ "Debug Windows", "running.html#debugwindows", null ],
+        [ "Attach to Process", "running.html#procattach", null ]
       ] ]
     ] ],
     [ "GUI Development", "gui.html", [
       [ "Getting Started", "gui.html#guistart", null ],
-      [ "Working with the GUI Editor", "gui.html#guidev", null ]
+      [ "Working with the GUI Editor", "gui.html#guidev", [
+        [ "GUI Editor Layout", "gui.html#guieditorlayout", null ],
+        [ "Editing GUI Elements", "gui.html#guieditorcontrols", null ]
+      ] ]
     ] ],
     [ "Tips &amp; Tricks", "tips.html", [
       [ "General Tips &amp; Tricks", "tips.html#gentips", null ],

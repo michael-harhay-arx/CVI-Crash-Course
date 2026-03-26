@@ -5,17 +5,15 @@
 To compile a CVI project, follow these steps:\+
 \begin{DoxyEnumerate}
 \item Ensure that the correct target type is selected.
-\item If just the current file needs to be compiled, press {\bfseries{Ctrl+K}} to do so. Otherwise, press {\bfseries{Ctrl+M}} to build the entire project.
+\item If just the current file needs to be compiled, press {\bfseries{Ctrl+K}} to do so. Otherwise, press {\bfseries{Ctrl+M}} to build the entire project. Other build options can be found under {\bfseries{Build}} (e.\+g. {\bfseries{Clean}}, {\bfseries{Rebuild}}).
 \item Warnings, errors, and other build-\/related messages will appear in the {\bfseries{Build Output Pane}}  
 \begin{DoxyImage}%
 \includegraphics[width=0.800000\textwidth]{BuildOutput.png}%
 \doxyfigcaption{Build Output Pane}%
 \end{DoxyImage}
 
-\end{DoxyEnumerate}\hypertarget{running_procattach}{}\doxysubsection{\texorpdfstring{Attach to Process}{Attach to Process}}\label{running_procattach}
-When calling C code from a Test\+Stand sequence or some other executable, you can open the corresponding source project in CVI and select {\bfseries{Run \texorpdfstring{$>$}{>} Attach to Process}} to attach to the process. This allows the current process to be debugged using all of CVI\textquotesingle{}s debug features.
-
-Similarly, {\bfseries{Run \texorpdfstring{$>$}{>} Detach from Process}} can be used to detach an attached CVI instance. This is often useful when stepping into CVI code from Test\+Stand, as terminating the process from CVI without detaching will halt the entire Test\+Stand sequence.\hypertarget{running_debug}{}\doxysection{\texorpdfstring{Debugging}{Debugging}}\label{running_debug}
+\end{DoxyEnumerate}\hypertarget{running_runoptions}{}\doxysubsection{\texorpdfstring{Run Options}{Run Options}}\label{running_runoptions}
+To run a compiled project, either run the executable or debug it in CVI ({\bfseries{Shift+\+F5}}).\hypertarget{running_debug}{}\doxysection{\texorpdfstring{Debugging}{Debugging}}\label{running_debug}
 \hypertarget{running_breakpoints}{}\doxysubsection{\texorpdfstring{Breakpoints \& Watch Expressions}{Breakpoints \& Watch Expressions}}\label{running_breakpoints}
 Breakpoints can be set by navigating to {\bfseries{Run \texorpdfstring{$>$}{>} Breakpoints}} ({\bfseries{Shift+\+F7}}), and adding a breakpoint via the resulting menu.
 
@@ -36,8 +34,11 @@ While executing a sequence with breakpoints, standard debugging step commands ca
 CVI features a number of windows that are useful for debugging (found under {\bfseries{Window}}). Here are a few useful ones to explore:\+
 \begin{DoxyItemize}
 \item {\bfseries{Memory}}:\+ displays the memory of the current program.
-\item {\bfseries{Resource Tracking}}:\+ displays both allocated and deallocated from the current program.
+\item {\bfseries{Resource Tracking}}:\+ displays both allocated and deallocated resources from the current program.
 \item {\bfseries{Variables and Call Stack}}:\+ displays all program variables and their values, as well as a standard call stack.
 \item {\bfseries{Watch}}:\+ displays all user-\/defined watch expressions.
-\item {\bfseries{Threads}}:\+ displays threads in the current program. 
-\end{DoxyItemize}
+\item {\bfseries{Threads}}:\+ displays threads in the current program.
+\end{DoxyItemize}\hypertarget{running_procattach}{}\doxysubsection{\texorpdfstring{Attach to Process}{Attach to Process}}\label{running_procattach}
+When calling C code from a Test\+Stand sequence or some other executable, you can open the corresponding source project in CVI and select {\bfseries{Run \texorpdfstring{$>$}{>} Attach to Process}} to attach to the process. This allows the current process to be debugged using CVI\textquotesingle{}s debug features.
+
+Similarly, {\bfseries{Run \texorpdfstring{$>$}{>} Detach from Process}} can be used to detach an attached CVI instance. This is often useful when stepping into CVI code from Test\+Stand, as terminating the process from CVI without detaching will halt the entire Test\+Stand sequence. 

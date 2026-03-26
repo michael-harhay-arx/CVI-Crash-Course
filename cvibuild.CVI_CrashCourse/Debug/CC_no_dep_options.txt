@@ -1,0 +1,1 @@
+-force-include-file "MainPage.c";"c:\Arxtron\Training Updates\CVI Training\MainPage.c" -force-include-file "Tips_Tricks_Documentation.c";"c:\Arxtron\Training Updates\CVI Training\Tips_Tricks_Documentation.c" 

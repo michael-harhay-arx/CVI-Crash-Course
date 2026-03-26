@@ -97,17 +97,16 @@ Running a CVI Project</h1>
 Building a Project</h2>
 <p>To compile a CVI project, follow these steps:</p><ol type="1">
 <li>Ensure that the correct target type is selected.</li>
-<li>If just the current file needs to be compiled, press <b>Ctrl+K</b> to do so. Otherwise, press <b>Ctrl+M</b> to build the entire project.</li>
+<li>If just the current file needs to be compiled, press <b>Ctrl+K</b> to do so. Otherwise, press <b>Ctrl+M</b> to build the entire project. Other build options can be found under <b>Build</b> (e.g. <b>Clean</b>, <b>Rebuild</b>).</li>
 <li>Warnings, errors, and other build-related messages will appear in the <b>Build Output Pane</b> <div class="image">
 <img src="BuildOutput.png" alt="" width="80%"/>
 <div class="caption">
 Build Output Pane</div></div>
  </li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="procattach"></a>
-Attach to Process</h2>
-<p>When calling C code from a TestStand sequence or some other executable, you can open the corresponding source project in CVI and select <b>Run &gt; Attach to Process</b> to attach to the process. This allows the current process to be debugged using all of CVI's debug features.</p>
-<p>Similarly, <b>Run &gt; Detach from Process</b> can be used to detach an attached CVI instance. This is often useful when stepping into CVI code from TestStand, as terminating the process from CVI without detaching will halt the entire TestStand sequence.</p>
+<h2 class="doxsection"><a class="anchor" id="runoptions"></a>
+Run Options</h2>
+<p>To run a compiled project, either run the executable or debug it in CVI (<b>Shift+F5</b>).</p>
 <h1 class="doxsection"><a class="anchor" id="debug"></a>
 Debugging</h1>
 <h2 class="doxsection"><a class="anchor" id="breakpoints"></a>
@@ -129,11 +128,15 @@ Step Commands</h2>
 Debug Windows</h2>
 <p>CVI features a number of windows that are useful for debugging (found under <b>Window</b>). Here are a few useful ones to explore:</p><ul>
 <li><b>Memory</b>: displays the memory of the current program.</li>
-<li><b>Resource Tracking</b>: displays both allocated and deallocated from the current program.</li>
+<li><b>Resource Tracking</b>: displays both allocated and deallocated resources from the current program.</li>
 <li><b>Variables and Call Stack</b>: displays all program variables and their values, as well as a standard call stack.</li>
 <li><b>Watch</b>: displays all user-defined watch expressions.</li>
-<li><b>Threads</b>: displays threads in the current program. </li>
+<li><b>Threads</b>: displays threads in the current program.</li>
 </ul>
+<h2 class="doxsection"><a class="anchor" id="procattach"></a>
+Attach to Process</h2>
+<p>When calling C code from a TestStand sequence or some other executable, you can open the corresponding source project in CVI and select <b>Run &gt; Attach to Process</b> to attach to the process. This allows the current process to be debugged using CVI's debug features.</p>
+<p>Similarly, <b>Run &gt; Detach from Process</b> can be used to detach an attached CVI instance. This is often useful when stepping into CVI code from TestStand, as terminating the process from CVI without detaching will halt the entire TestStand sequence. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

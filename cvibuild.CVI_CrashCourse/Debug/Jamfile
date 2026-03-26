@@ -1,0 +1,52 @@
+CCFLAGS = -g ;
+HDRS = 	"C:\\Users\\Public\\Documents\\National Instruments\\TestStand 2017 (32-bit)\\AdapterSupport\\CVI"
+	"C:\\Program Files (x86)\\National Instruments\\TestStand 2017\\API\\DLLInterfaces"
+	"c:\\Arxtron\\Libraries"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr\\TestStand\\API"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2019\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2019\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2019\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\bin"
+	;
+include Jamfile_instr ;
+LOCATE on "MainPage.c" = "c:\\Arxtron\\Training Updates\\CVI Training" ;
+LOCATE on "Tips_Tricks_Documentation.c" = "c:\\Arxtron\\Training Updates\\CVI Training" ;
+Object "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj" : "c:\\Arxtron\\Training Updates\\CVI Training\\MainPage.c" ;
+FILENUM on "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj" = 1 ;
+DEFPROTS on "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj" = "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj.cvidefprots" ;
+OUTFILE on "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj" = "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj.out" ;
+PrjObjects += "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\MainPage.obj" ;
+Object "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj" : "c:\\Arxtron\\Training Updates\\CVI Training\\Tips_Tricks_Documentation.c" ;
+FILENUM on "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj" = 2 ;
+DEFPROTS on "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj" = "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj.cvidefprots" ;
+OUTFILE on "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj" = "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj.out" ;
+PrjObjects += "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Tips_Tricks_Documentation.obj" ;
+Object "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\resources.res" : "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\resources.in.rc" ;
+Depends "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\resources.res" : "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Documentation.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Documentation.exe" : "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\link_options.txt" ;
+Depends "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Documentation.exe" : "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\resources.res" ;
+Depends all : "c:\\Arxtron\\Training Updates\\CVI Training\\cvibuild.CVI_CrashCourse\\Debug\\Documentation.exe" ;

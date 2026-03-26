@@ -13,9 +13,10 @@
 * follow it sequentially and follow along in CVI when applicable.
 *
 * \subsection whyuse Why Use CVI?
-* LabWindows/CVI is an IDE specifically designed for test, measurement, and control applications.
+* LabWindows/CVI is an IDE designed for test, measurement, and control applications.
 * While fairly similar to any other IDE with C support, it features a handy GUI editor that can be 
-* used to quickly develop a frontend for any test setup.
+* used to quickly develop a frontend for any test setup. Additionally, it allows for easy integration with 
+* the suite of NI devices and programs that we use at Arxtron (primarily TestStand).
 *
 * \section start Getting Started
 * 
@@ -36,17 +37,13 @@ The interface is divided into the following panes:
 * -# **Project Tree**: Used to browse the current project's structure.
 * -# **Library Tree**: Used to browse libraries.
 * -# **Window Confinement Region**: The primary region for editing code.
-* -# **Toolbar**: displays various icons which can be used to perform various actions.
+* -# **Toolbar**: Contains icons which can be used to perform various useful actions.
 *
 * If any of these panes do not appear by default, they can be toggled from within the **View** menu.
 * 
 * Additionally, CVI does not show line numbers by default. It is recommended that you 
 * select **View > Line Numbers** to toggle this setting.
 *
-*******************************************************************************/
-
-/***************************************************************************//*!
-* \page terms Terminology
 *******************************************************************************/
 
 /***************************************************************************//*!
@@ -78,7 +75,7 @@ The interface is divided into the following panes:
 * the desired DLL without needing to recompile everything) and take up less space.
 * - **Static Library**: a library file that is linked at compile time. Static libraries 
 * have the advantage of being self-contained, however they are much larger. Additionally,
-* updating a static library requires recompiling.
+* any updates a static library require recompiling.
 * \image html TargetType.png "Build Target Type Menu" width=30%
 * \image latex TargetType.png "Build Target Type Menu" width=30%
 *
@@ -114,22 +111,14 @@ The interface is divided into the following panes:
 * To compile a CVI project, follow these steps:
 * -# Ensure that the correct target type is selected.
 * -# If just the current file needs to be compiled, press **Ctrl+K** to do so.
-* Otherwise, press **Ctrl+M** to build the entire project.
+* Otherwise, press **Ctrl+M** to build the entire project. Other build options can be found under **Build** (e.g. **Clean**, **Rebuild**).
 * -# Warnings, errors, and other build-related messages will appear in the
 * **Build Output Pane**
 * \image html BuildOutput.png "Build Output Pane" width=80%
 * \image latex BuildOutput.png "Build Output Pane" width=80%
 *
-* \subsection procattach Attach to Process 
-* When calling C code from a TestStand sequence or some other executable,
-* you can open the corresponding source project in CVI and select **Run > Attach to Process**
-* to attach to the process. This allows the current process to be debugged using
-* all of CVI's debug features.
-*
-* Similarly, **Run > Detach from Process** can be used to detach an attached CVI
-* instance. This is often useful when stepping into CVI code from TestStand, as
-* terminating the process from CVI without detaching will halt the entire 
-* TestStand sequence.
+* \subsection runoptions Run Options
+* To run a compiled project, either run the executable or debug it in CVI (**Shift+F5**).
 *
 * \section debug Debugging
 *
@@ -156,10 +145,21 @@ The interface is divided into the following panes:
 * \subsection debugwindows Debug Windows
 * CVI features a number of windows that are useful for debugging (found under **Window**). Here are a few useful ones to explore:
 * - **Memory**: displays the memory of the current program.
-* - **Resource Tracking**: displays both allocated and deallocated from the current program.
+* - **Resource Tracking**: displays both allocated and deallocated resources from the current program.
 * - **Variables and Call Stack**: displays all program variables and their values, as well as a standard call stack.
 * - **Watch**: displays all user-defined watch expressions.
 * - **Threads**: displays threads in the current program.
+*
+* \subsection procattach Attach to Process 
+* When calling C code from a TestStand sequence or some other executable,
+* you can open the corresponding source project in CVI and select **Run > Attach to Process**
+* to attach to the process. This allows the current process to be debugged using
+* CVI's debug features.
+*
+* Similarly, **Run > Detach from Process** can be used to detach an attached CVI
+* instance. This is often useful when stepping into CVI code from TestStand, as
+* terminating the process from CVI without detaching will halt the entire 
+* TestStand sequence.
 *
 *******************************************************************************/
 
@@ -167,13 +167,13 @@ The interface is divided into the following panes:
 * \page gui GUI Development
 *
 * \section guistart Getting Started
-* CVI is useful because of its built-in GUI editor. The easiest way to begin
-* developing a GUI is to copy the Arxtron template.
-*
-* TODO: Talk about how to use Arxtron GUI
+* CVI's built-in GUI editor is a handy way to create a simple frontend. To get started,
+* either create a .uir file and add it to the project, or set up the 
+* <a href="https://github.com/ArxtronTech/ArxtronSequencerGUI">Arxtron Sequencer GUI</a>.
 *
 * \section guidev Working with the GUI Editor
 * 
+* \subsection guieditorlayout GUI Editor Layout
 * -# **GUI Editor Pane**: The region in which GUI editing takes place.
 * -# **Objects Pane**: This pane contains a list of present GUI objects.
 * -# **Object Properties Pane**: When a GUI object is selected, its properties
@@ -183,7 +183,13 @@ The interface is divided into the following panes:
 * \image html GUIDefault.png "Default CVI GUI Editor Layout" width=70%
 * \image latex GUIDefault.png "Default CVI GUI Editor Layout" width=70%
 *
-* To create a GUI element, right click anywhere and make a selection.
+* \subsection guieditorcontrols Editing GUI Elements
+* To create a GUI element, right click anywhere and select the desired GUI element to add.
+*
+* Once an element has been added, it can be edited by right clicking and selecting **Edit Control**.
+* Alternatively, the Object Properties Pane can be used for editing.
+*
+* To learn more about a GUI element, right click it and select **Control Help**.
 *******************************************************************************/
 
 /***************************************************************************//*!
@@ -196,7 +202,7 @@ The interface is divided into the following panes:
 * <tr><th>Version<th>Author<th>Date<th>Changes
 * <tr><td>1.0.0
 * <td>Michael Harhay
-* <td>25/3/2026
+* <td>26/3/2026
 * <td>Initial Release
 * </table>
 *******************************************************************************/

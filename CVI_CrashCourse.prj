@@ -9,7 +9,7 @@ IVI Standard Root Dir = "/C/Program Files (x86)/IVI Foundation/IVI"
 VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
 IVI Standard Root 64-bit Dir = "/C/Program Files/IVI Foundation/IVI"
 VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
-Number of Files = 3
+Number of Files = 2
 Target Type = "Executable"
 Flags = 2064
 Copied From Locked InstrDrv Directory = False
@@ -41,19 +41,6 @@ Folder Id = 0
 [File 0002]
 File Type = "CSource"
 Res Id = 2
-Path Is Rel = True
-Path Rel To = "Project"
-Path Rel Path = "Terminology_Documentation.c"
-Path = "/c/Arxtron/Training Updates/CVI Training/Terminology_Documentation.c"
-Exclude = False
-Compile Into Object File = False
-Project Flags = 0
-Folder = "Source Files"
-Folder Id = 0
-
-[File 0003]
-File Type = "CSource"
-Res Id = 3
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "Tips_Tricks_Documentation.c"

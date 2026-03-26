@@ -48,23 +48,14 @@ Batch Build Debug = False
 [File 0001]
 Path = "/c/Arxtron/Training Updates/CVI Training/MainPage.c"
 File Type = "CSource"
-Disk Date = 3857384461
+Disk Date = 3857387679
 In Projects = "1,"
-Source Window State = "1,161,161,161,57,57,57,0,0,0,0,0,0,0,0,0,120,0,161,57,401,693,1,0,"
+Source Window State = "1,181,181,181,1,1,1,0,0,0,0,0,0,0,0,0,156,0,181,1,401,693,1,0,"
 Window Top = 33
 Window Left = 10
 Window Z-Order = 1
 
 [File 0002]
-Path = "/c/Arxtron/Training Updates/CVI Training/Terminology_Documentation.c"
-File Type = "CSource"
-Disk Date = 3857213651
-In Projects = "1,"
-Source Window State = "1,15,15,15,8,8,8,0,0,0,0,0,0,0,0,0,0,0,15,8,400,600,1,0,"
-Window Top = 31
-Window Z-Order = 3
-
-[File 0003]
 Path = "/c/Arxtron/Training Updates/CVI Training/Tips_Tricks_Documentation.c"
 File Type = "CSource"
 Disk Date = 3857215585
@@ -72,12 +63,11 @@ In Projects = "1,"
 Source Window State = "1,26,26,26,80,80,80,0,0,0,0,0,0,0,0,0,0,0,26,80,401,693,1,0,"
 Window Top = 95
 Window Left = 42
-Window Z-Order = 2
+Window Z-Order = 3
 
 [Tab Order]
 Tab 0001 = "/c/Arxtron/Training Updates/CVI Training/MainPage.c"
 Tab 0002 = "/c/Arxtron/Training Updates/CVI Training/Tips_Tricks_Documentation.c"
-Tab 0003 = "/c/Arxtron/Training Updates/CVI Training/Terminology_Documentation.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True
