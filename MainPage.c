@@ -27,12 +27,12 @@
 * start a new project from a template (or from scratch), and open help documents and example projects.
 * Feel free to follow along in CVI by selecting any of the available options.
 * \image html Welcome.png "CVI Welcome Menu" width=40%
-* \image latex Welcome.png "CVI Welcome Menu" width=40%
+* \image latex Welcome.png "CVI Welcome Menu" width=50%
 *
 * \subsection familiarize Familiarize Yourself
 * Take a few moments to familiarize yourself with the general layout of the program.
 * \image html CVIDefault.png "Default CVI Layout" width=70%
-* \image latex CVIDefault.png "Default CVI Layout" width=70%
+* \image latex CVIDefault.png "Default CVI Layout" width=80%
 The interface is divided into the following panes:
 * -# **Project Tree**: Used to browse the current project's structure.
 * -# **Library Tree**: Used to browse libraries.
@@ -64,7 +64,7 @@ The interface is divided into the following panes:
 * - **Debug64**: 64-bit version of **Debug**.
 * - **Release64**: 64-bit version of **Release**.
 * \image html BuildConfig.png "Build Configuration Menu" width=30%
-* \image latex BuildConfig.png "Build Configuration Menu" width=30%
+* \image latex BuildConfig.png "Build Configuration Menu" width=40%
 *
 * \subsection buildtargettype Build Target Type
 * Can be accessed via **Build > Target Type**. The resulting dropdown lists 
@@ -77,14 +77,14 @@ The interface is divided into the following panes:
 * have the advantage of being self-contained, however they are much larger. Additionally,
 * any updates a static library require recompiling.
 * \image html TargetType.png "Build Target Type Menu" width=30%
-* \image latex TargetType.png "Build Target Type Menu" width=30%
+* \image latex TargetType.png "Build Target Type Menu" width=40%
 *
 * \subsection buildtarget Build Target Settings
 * Can be accessed via **Build > Target Settings**. Target settings are used to
 * configure the various target types. These settings typically aren't touched,
 * but are good to know about.
 * \image html Target.png "Build Target Settings Menu" width=40%
-* \image latex Target.png "Build Target Settings Menu" width=40%
+* \image latex Target.png "Build Target Settings Menu" width=50%
 * 
 * \section environment Environment
 * 
@@ -92,14 +92,14 @@ The interface is divided into the following panes:
 * Can be accessed via **Options > Environment > Include Paths**. This menu determines
 * CVI's search directories. Ensure that "C:\Arxtron\Libraries" is included.
 * \image html Environment.png "Include Paths Menu" width=42%
-* \image latex Environment.png "Include Paths Menu" width=42%
+* \image latex Environment.png "Include Paths Menu" width=52%
 *
 * \section editor Editor Preferences
 * 
 * Can be accessed via **Options > Editor Preferences**. Typically, these settings
 * should not be changed, but are good to know about.
 * \image html EditorPrefs.png "Editor Preferences Menu" width=25%
-* \image latex EditorPrefs.png "Editor Preferences Menu" width=25%
+* \image latex EditorPrefs.png "Editor Preferences Menu" width=35%
 *
 *******************************************************************************/
 
@@ -115,7 +115,7 @@ The interface is divided into the following panes:
 * -# Warnings, errors, and other build-related messages will appear in the
 * **Build Output Pane**
 * \image html BuildOutput.png "Build Output Pane" width=80%
-* \image latex BuildOutput.png "Build Output Pane" width=80%
+* \image latex BuildOutput.png "Build Output Pane" width=90%
 *
 * \subsection runoptions Run Options
 * To run a compiled project, either run the executable or debug it in CVI (**Shift+F5**).
@@ -129,7 +129,7 @@ The interface is divided into the following panes:
 * Alternatively, clicking within the grey space directly to the left of a line
 * number will enable a breakpoint.
 * \image html Breakpoint.png width=20%
-* \image latex Breakpoint.png width=20%
+* \image latex Breakpoint.png width=30%
 *
 * Watch expressions can be set by selecting a line of code, then selecting
 * **Run > Add Watch Expression** or by pressing **Shift+F9**.
@@ -181,7 +181,7 @@ The interface is divided into the following panes:
 * -# **Help Pane**: This pane displays helpful messages about the current selection.
 *
 * \image html GUIDefault.png "Default CVI GUI Editor Layout" width=70%
-* \image latex GUIDefault.png "Default CVI GUI Editor Layout" width=70%
+* \image latex GUIDefault.png "Default CVI GUI Editor Layout" width=80%
 *
 * \subsection guieditorcontrols Editing GUI Elements
 * To create a GUI element, right click anywhere and select the desired GUI element to add.
